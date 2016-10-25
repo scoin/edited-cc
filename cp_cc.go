@@ -37,7 +37,6 @@ var recentLeapYear = 2016
 
 // SimpleChaincode example simple Chaincode implementation
 type SimpleChaincode struct {
-	*shim.Chaincode
 }
 
 func generateCUSIPSuffix(issueDate string, days int) (string, error) {
@@ -105,7 +104,7 @@ type Transaction struct {
 	Discount    float64  `json:"discount"`
 }
 
-func (t *SimpleChaincode) init(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *SimpleChaincode) init(stub shim.ChaincodeStubInterface) ([]byte, error) {
     // Initialize the collection of commercial paper keys
     fmt.Println("Initializing paper keys collection")
 	var blank []string
