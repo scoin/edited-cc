@@ -221,10 +221,10 @@ func (t *SimpleChaincode) createAccount(stub shim.ChaincodeStubInterface, args [
     
 }
 
-func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface) ([]byte, error) {
+func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
 	if function == "init" {
         fmt.Println("Firing init")
-        return t.init(stub)
+        return t.init(stub, args)
     }
 	return nil, nil
 }
