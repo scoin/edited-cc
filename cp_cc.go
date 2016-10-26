@@ -744,7 +744,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
         return t.createAccount(stub, args)
     } else if function == "init" {
         fmt.Println("Firing init")
-        return t.init(stub)
+        return t.init(stub, args)
     }
 
 	return nil, errors.New("Received unknown function invocation")
