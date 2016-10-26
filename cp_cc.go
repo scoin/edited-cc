@@ -37,7 +37,6 @@ var recentLeapYear = 2016
 
 // SimpleChaincode example simple Chaincode implementation
 type SimpleChaincode struct {
-	*shim.Chaincode
 }
 
 func generateCUSIPSuffix(issueDate string, days int) (string, error) {
